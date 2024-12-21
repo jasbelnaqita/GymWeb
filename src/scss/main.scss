@@ -1,2 +1,5 @@
-@use './blocks/header';
-@use './blocks/footer';
+@import './blocks/*.scss';
+
+body {
+  background-color: paleturquoise;
+}

@@ -1,1 +1,3 @@
-console.log('Hello!');
+import hello from './modules/hello.js';
+
+console.log(hello);
