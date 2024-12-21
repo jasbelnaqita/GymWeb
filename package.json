@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "css-loader": "^7.1.2",
     "gulp": "^5.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-file-include": "^2.3.0",
@@ -9,6 +10,8 @@
     "gulp-sass": "^6.0.0",
     "gulp-server-livereload": "^1.9.2",
     "gulp-sourcemaps": "^3.0.0",
-    "sass": "^1.83.0"
+    "sass": "^1.83.0",
+    "style-loader": "^4.0.0",
+    "webpack-stream": "^7.0.0"
   }
 }
