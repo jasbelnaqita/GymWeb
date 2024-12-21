@@ -8,6 +8,7 @@ const sourceMaps = require('gulp-sourcemaps');
 const groupMedia = require('gulp-group-css-media-queries'); //можно и удалить, добавляет баги соурс-картам в f12 в браузере
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
+const babel = require('gulp-babel');
 
 const webpack = require('webpack-stream');
 
@@ -68,6 +69,7 @@ gulp.task('js', function () {
   return gulp
     .src('./src/js/*.js')
     .pipe(plumber(plumberNotify('JS')))
+    .pipe(babel())
     .pipe(webpack(require('./webpack.config.js')))
     .pipe(gulp.dest('./dist/js'));
 });
