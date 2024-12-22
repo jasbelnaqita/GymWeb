@@ -34,7 +34,7 @@ const plumberNotify = (title) => {
 gulp.task('html:dev', function () {
   return gulp
     .src(['./src/html/**/*.html'])
-    .pipe(changed('./build/'))
+    .pipe(changed('./build/', { hasChanged: changed.compareContents }))
     .pipe(plumber(plumberNotify('HTML')))
     .pipe(
       fileInclude({
