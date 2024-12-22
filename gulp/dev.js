@@ -6,7 +6,6 @@ const server = require('gulp-server-livereload');
 const clean = require('gulp-clean');
 const fs = require('fs');
 const sourceMaps = require('gulp-sourcemaps');
-const groupMedia = require('gulp-group-css-media-queries'); //можно и удалить, добавляет баги соурс-картам в f12 в браузере
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const webpack = require('webpack-stream');
@@ -54,7 +53,6 @@ gulp.task('sass:dev', function () {
     .pipe(sourceMaps.init())
     .pipe(sassGlob())
     .pipe(sass())
-    .pipe(groupMedia()) //вот он ещё
     .pipe(sourceMaps.write())
     .pipe(gulp.dest('./build/css/'));
 });
@@ -84,13 +82,15 @@ gulp.task('files:dev', function () {
 });
 
 gulp.task('js:dev', function () {
-  return gulp
-    .src('./src/js/*.js')
-    .pipe(changed('./build/js/'))
-    .pipe(plumber(plumberNotify('JS')))
-    .pipe(babel())
-    .pipe(webpack(require('./../webpack.config.js')))
-    .pipe(gulp.dest('./build/js/'));
+  return (
+    gulp
+      .src('./src/js/*.js')
+      .pipe(changed('./build/js/'))
+      .pipe(plumber(plumberNotify('JS')))
+      // .pipe(babel())
+      .pipe(webpack(require('./../webpack.config.js')))
+      .pipe(gulp.dest('./build/js/'))
+  );
 });
 
 const serverOptions = {
@@ -103,10 +103,10 @@ gulp.task('server:dev', function () {
 });
 
 gulp.task('watch:dev', function () {
-  gulp.watch('./src/scss/**/*.scss', gulp.parallel('sass'));
-  gulp.watch('./src/**/*.html', gulp.parallel('html'));
-  gulp.watch('./src/img/**/*', gulp.parallel('images'));
-  gulp.watch('./src/fonts/**/*', gulp.parallel('fonts'));
-  gulp.watch('./src/files/**/*', gulp.parallel('files'));
-  gulp.watch('./src/js/**/*.js', gulp.parallel('js'));
+  gulp.watch('./src/scss/**/*.scss', gulp.parallel('sass:dev'));
+  gulp.watch('./src/**/*.html', gulp.parallel('html:dev'));
+  gulp.watch('./src/img/**/*', gulp.parallel('images:dev'));
+  gulp.watch('./src/fonts/**/*', gulp.parallel('fonts:dev'));
+  gulp.watch('./src/files/**/*', gulp.parallel('files:dev'));
+  gulp.watch('./src/js/**/*.js', gulp.parallel('js:dev'));
 });

@@ -1,5 +1,8 @@
 @import './blocks/*.scss';
 
+* {
+  box-sizing: border-box;
+}
 body {
   background-color: paleturquoise;
 }
