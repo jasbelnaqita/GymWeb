@@ -9,7 +9,7 @@ const sourceMaps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const webpack = require('webpack-stream');
-const babel = require('gulp-babel');
+// const babel = require('gulp-babel');
 
 // const imagemin = require('gulp-imagemin');
 const changed = require('gulp-changed');
