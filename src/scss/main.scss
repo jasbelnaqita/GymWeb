@@ -1,8 +1,10 @@
-@import './blocks/*.scss';
+/* Base */
+@import './base/vars';
+@import './base/reset';
+@import './base/base';
+@import './base/utils';
+@import './base/containers';
+@import './base/sticky-footer';
 
-* {
-  box-sizing: border-box;
-}
-body {
-  background-color: rgb(131, 156, 74);
-}
+/* Blocks */
+@import './blocks/*.scss';
