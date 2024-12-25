@@ -8,3 +8,11 @@
 
 /* Blocks */
 @import './blocks/*.scss';
+
+.background_photo {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  z-index: 0;
+}
