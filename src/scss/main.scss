@@ -5,14 +5,20 @@
 @import './base/utils';
 @import './base/containers';
 @import './base/sticky-footer';
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=M+PLUS+1:wght@100..900&display=swap');
 
 /* Blocks */
 @import './blocks/*.scss';
+/* Fonts */
 
-.background_photo {
+.background-photo {
   display: block;
   width: 100%;
   height: auto;
   position: relative;
   z-index: 0;
+}
+
+.test-photo {
+  font-family: 'Kode Mono', serif;
 }
