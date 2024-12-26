@@ -80,11 +80,12 @@
 
 .mobile-nav-btn {
   z-index: 999;
-  // display: none;
+  position: relative;
+  display: none;
 }
 
-// @media (max-width: 1000px) {
-// 	.mobile-nav-btn {
-// 		display: block;
-// 	}
-// }
+@media (max-width: 1000px) {
+  .mobile-nav-btn {
+    display: block;
+  }
+}

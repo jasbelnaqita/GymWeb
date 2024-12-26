@@ -2,7 +2,7 @@
   background-color: transparent;
 
   position: absolute; /* Чтобы задать контроль над позицией */
-  z-index: 10;
+  //
   width: 100%;
 
   &__row {
@@ -12,7 +12,12 @@
     width: 100%;
   }
 }
-
+.logo {
+  position: relative;
+  z-index: 90;
+}
+// элементам в хедере "head" "your body" etc просто выдавать position: relative; и
+//   z-index: 90; чтобы они оказывались поверх background но не поверх nav-menu когда оно открывается
 .container {
   width: 100%;
   position: relative; /* Чтобы задать контроль над позицией */
