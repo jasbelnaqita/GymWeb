@@ -5,26 +5,42 @@
 @import './base/utils';
 @import './base/containers';
 @import './base/sticky-footer';
-@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=M+PLUS+1:wght@100..900&display=swap');
 
 /* Blocks */
 @import './blocks/*.scss';
 /* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=M+PLUS+1:wght@100..900&display=swap');
 
-.background-photo {
+// .background-photo {
+//   position: relative;
+// }
+#bcg {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   position: relative;
   z-index: 0;
 }
 
-.test-photo {
-  font-family: 'Kode Mono', serif;
-}
 .d {
   // position: relative;
   z-index: 91;
   width: 100%;
   height: 100%;
+}
+
+#LANDING-LOGO {
+  transform: translateY(-1%); /* Сдвигает весь блок на 20px вверх */
+}
+
+#TRAIN {
+  transform: translateY(-2%);
+}
+
+#LANDING-MAN {
+  position: absolute; /* Позиционирование относительно родителя */
+  left: 50%; /* Сдвигаем элемент в середину родителя */
+  transform: translateX(-0%) translateY(-3%) scale(0.9); /* Центрируем по оси X, оставляем scale */
+  // top: 50%; /* Если нужно центрирование и по вертикали */
+  transform-origin: center; /* Указываем точку масштабирования */
 }
