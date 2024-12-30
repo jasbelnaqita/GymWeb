@@ -34,13 +34,33 @@
 }
 
 #TRAIN {
-  transform: translateY(-2%);
+  transform: translateY(-3%);
+}
+
+#IT {
+  transform: translateY(-3%) translateX(-1.5%);
 }
 
 #LANDING-MAN {
   position: absolute; /* Позиционирование относительно родителя */
   left: 50%; /* Сдвигаем элемент в середину родителя */
-  transform: translateX(-0%) translateY(-3%) scale(0.9); /* Центрируем по оси X, оставляем scale */
+  transform: translateX(-0%) translateY(-4%) scale(0.9); /* Центрируем по оси X, оставляем scale */
   // top: 50%; /* Если нужно центрирование и по вертикали */
   transform-origin: center; /* Указываем точку масштабирования */
+}
+
+#SPEED-IT-UP {
+  transform: translateY(-3%);
+}
+
+#MAKE-IT-WORK {
+  transform: translateY(-3%);
+}
+
+#EVERY-MUSCLE-SHOULD-BE-INCLUDED {
+  transform: translateY(5%) translateX(10%) scale(0.9);
+}
+
+#LANDING-BUTTON {
+  transform: translateY(-3%);
 }
